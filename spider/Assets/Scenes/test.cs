@@ -8,14 +8,14 @@ using ChartAndGraph;
 public class test : MonoBehaviour
 {
     public GraphChart chart;
-    public float power = 1000f;
+    public float power = 2000f;
     float time = 0;
     float offset = 0f;
 
     // Start is called before the first frame update
     void Start()
     {
-        offset = power / 2f;
+        offset = power;
         chart.DataSource.StartBatch();
         chart.DataSource.ClearCategory("test1");
         chart.DataSource.ClearCategory("test2");
