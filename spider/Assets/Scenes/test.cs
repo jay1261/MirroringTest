@@ -8,17 +8,18 @@ using ChartAndGraph;
 public class test : MonoBehaviour
 {
     public GraphChart chart;
-    public float power = 1000f;
+    public float power = 2000f;
     float time = 0;
     float offset = 0f;
 
     // Start is called before the first frame update
     void Start()
     {
-        offset = power / 2f;
+        offset = power;
         chart.DataSource.StartBatch();
         chart.DataSource.ClearCategory("test1");
         chart.DataSource.ClearCategory("test2");
+        chart.DataSource.ClearCategory("test3");
         chart.DataSource.AddPointToCategory("test2", 0, 0);
         chart.DataSource.AddPointToCategory("test2", 1, 0);
         chart.DataSource.AddPointToCategory("test2", 2, offset);
@@ -28,6 +29,9 @@ public class test : MonoBehaviour
         chart.DataSource.AddPointToCategory("test2", 6, offset);
         chart.DataSource.AddPointToCategory("test2", 7, 0);
         chart.DataSource.AddPointToCategory("test2", 8, 0);
+        for (int i = 0; i < 10; i++) {
+            chart.DataSource.AddPointToCategory("test3", i, offset);
+        }
         chart.HeightRatio = 10;
         chart.DataSource.EndBatch();
         Serial.instance.SerialSendingStart();
