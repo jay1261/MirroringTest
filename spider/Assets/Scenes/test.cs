@@ -20,6 +20,7 @@ public class test : MonoBehaviour
         chart.DataSource.ClearCategory("test1");
         chart.DataSource.ClearCategory("test2");
         chart.DataSource.ClearCategory("test3");
+        
         chart.DataSource.AddPointToCategory("test2", 0, 0);
         chart.DataSource.AddPointToCategory("test2", 1, 0);
         chart.DataSource.AddPointToCategory("test2", 2, offset);
@@ -37,6 +38,16 @@ public class test : MonoBehaviour
         Serial.instance.SerialSendingStart();
 
 
+        chart.DataSource.ClearCategory("SinTracking");
+        chart.DataSource.VerticalViewSize = power;
+        chart.DataSource.HorizontalViewSize = 20 + startOffset;
+
+        chart.DataSource.StartBatch();
+        for (float i = startOffset; i < 20 + startOffset; i += 0.1f)
+        {
+            chart.DataSource.AddPointToCategory("GuideLine", i, Mathf.Sin((0.2f * (Mathf.PI)) * (i - startOffset) - (0.5f * (Mathf.PI))) * (power / 4f) + (power / 4f));//chart.DataSource.AddPointToCategory("GuideLine",i,Mathf.Sin((0.2f * (Mathf.PI)) * i-(0.5f* (Mathf.PI))) * (halfPower / 4f) + (halfPower / 4f));
+        }
+        chart.DataSource.EndBatch();
     }
 
     // Update is called once per frame
