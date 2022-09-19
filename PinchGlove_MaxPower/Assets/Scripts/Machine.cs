@@ -40,7 +40,8 @@ public class Machine : MonoBehaviour
         {
             float tmp = 0f;
             machine_Renderer[1].SetFloat("_Position", 0f);
-            while ( tmp <= (float)cube.pinch_Max/2000)
+            yield return new WaitForSeconds(0.5f);
+            while ( tmp <= cube.pinch_Max/6000f)
             {
                 tmp += Time.deltaTime;
                 machine_Renderer[1].SetFloat("_Position", tmp);
