@@ -56,8 +56,9 @@ public class test : MonoBehaviour
         if (time < 8)
         {
             chart.DataSource.HorizontalViewSize = 10;
-            chart.DataSource.VerticalViewSize = 1000; 
-            chart.DataSource.AddPointToCategoryRealtime("test1", time, Inputdata.index_F);
+            chart.DataSource.VerticalViewSize = 1000;
+            int fingerTmp = Inputdata.index_F;
+            chart.DataSource.AddPointToCategoryRealtime("test1", time, fingerTmp/2f);
             time += Time.deltaTime;
         }
         else
