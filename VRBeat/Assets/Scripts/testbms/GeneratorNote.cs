@@ -53,19 +53,19 @@ public class GeneratorNote : MonoBehaviour
     {
         foreach (float noteTime in sheet.noteList1)
         {
-            Instantiate(notePrefab_Y, new Vector3(-0.4f, 0.5f, myoffset + noteStartPosY + offset + notePosY * (noteTime * noteCorrectRate)), Quaternion.Euler(new Vector3(0, 180, 0)));
+            Instantiate(notePrefab_Y, new Vector3(-0.4f, 0.85f, myoffset + noteStartPosY + offset + notePosY * (noteTime * noteCorrectRate)), Quaternion.Euler(new Vector3(0, 180, 0)));
         }
         foreach (float noteTime in sheet.noteList2)
         {
-            Instantiate(notePrefab_G, new Vector3(-0.1f, 0.5f, myoffset + noteStartPosY + offset + notePosY * (noteTime * noteCorrectRate)), Quaternion.Euler(new Vector3(0, 180, 0)));
+            Instantiate(notePrefab_G, new Vector3(-0.1f, 0.85f, myoffset + noteStartPosY + offset + notePosY * (noteTime * noteCorrectRate)), Quaternion.Euler(new Vector3(0, 180, 0)));
         }
         foreach (float noteTime in sheet.noteList3)
         {
-            Instantiate(notePrefab_B, new Vector3(0.2f, 0.5f, myoffset + noteStartPosY + offset + notePosY * (noteTime * noteCorrectRate)), Quaternion.Euler(new Vector3(0, 180, 0)));
+            Instantiate(notePrefab_B, new Vector3(0.2f, 0.85f, myoffset + noteStartPosY + offset + notePosY * (noteTime * noteCorrectRate)), Quaternion.Euler(new Vector3(0, 180, 0)));
         }
         foreach (float noteTime in sheet.noteList4)
         {
-            Instantiate(notePrefab_R, new Vector3(0.5f, 0.5f, myoffset + noteStartPosY + offset + notePosY * (noteTime * noteCorrectRate)), Quaternion.Euler(new Vector3(0, 180, 0)));
+            Instantiate(notePrefab_R, new Vector3(0.5f, 0.85f, myoffset + noteStartPosY + offset + notePosY * (noteTime * noteCorrectRate)), Quaternion.Euler(new Vector3(0, 180, 0)));
         }
     }
 }
