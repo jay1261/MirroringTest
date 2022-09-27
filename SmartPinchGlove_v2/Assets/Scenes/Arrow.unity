@@ -2545,6 +2545,7 @@ GameObject:
   m_Component:
   - component: {fileID: 611971323}
   - component: {fileID: 611971322}
+  - component: {fileID: 611971324}
   m_Layer: 0
   m_Name: GrabberControll
   m_TagString: Untagged
@@ -2559,7 +2560,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 611971321}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 51eecf060d33a274a81f9c3c70ba74c3, type: 3}
   m_Name: 
@@ -2578,6 +2579,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &611971324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611971321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 077260e09202941409e5e547648c9449, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &614314065
 GameObject:
   m_ObjectHideFlags: 0
@@ -5450,6 +5463,8 @@ MonoBehaviour:
   isLogedin: 0
   userID: 
   userName: 
+  userGender: 
+  userAge: 0
   date: 
 --- !u!4 &1054280513
 Transform:
@@ -9714,7 +9729,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 896436215}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 200
+  m_MaxValue: 3000
   m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
