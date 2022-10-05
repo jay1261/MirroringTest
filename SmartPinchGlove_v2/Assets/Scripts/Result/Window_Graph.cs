@@ -39,7 +39,7 @@ public class Window_Graph : MonoBehaviour
 
     private void Awake()
     {
-        datasToProcess = new List<float>() {0.001f, 100f, 100f, 1f, 100f, 1f, 100f, 1f}; // 0:1000g(힘), 1:0.45초(상승시간), 2:0.45초(하강시간) , 3:2hz(빈도), 4:0.45초(간격), 5:80%(정확도), 6:rmse(rmse), 7: 40개(상자)
+        datasToProcess = new List<float>() {0.001f, 100f, 100f, 1f, 100f, 1f, 1f, 1f}; // 0:1000g(힘), 1:0.45초(상승시간), 2:0.45초(하강시간) , 3:2hz(빈도), 4:0.45초(간격), 5:80%(정확도), 6:rmse(rmse), 7: 40개(상자)
         graphContainer = transform.Find("graphContainer").GetComponent<RectTransform>(); //전체 틀
         labelTemplateX = graphContainer.Find("labelTemplateX").GetComponent<RectTransform>(); //x축
         labelTemplateY = graphContainer.Find("labelTemplateY").GetComponent<RectTransform>(); //y축

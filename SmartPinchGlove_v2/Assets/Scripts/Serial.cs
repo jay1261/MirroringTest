@@ -94,7 +94,7 @@ public class Serial : MonoBehaviour
 
     private void MySerialReceived()  //데이터 가공
     {
-       // 인큐 과정
+        // 인큐 과정
        string tmp = sp.ReadExisting(); //업데이트 마다 현재 입력 버퍼에서 가져옴
        splitedTmp = tmp.Split('\n');   // 가져온거 줄바꿈 기준으로 잘라서 배열에 넣음
        foreach (string s in splitedTmp)    //잘라서 넣은 배열하나씩 돌면서 빈 배열이 아니면 queue에 넣어줌
