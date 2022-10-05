@@ -4,6 +4,7 @@ using UnityEngine;
 using ChartAndGraph;
 using System.Linq;
 using UnityEngine.UI;
+using System;
 
 
 //데이터 저장할 클래스 
@@ -49,9 +50,10 @@ public class GraphControll : MonoBehaviour
     List<MaxPowerData> maxPowerDatas = new List<MaxPowerData>();
     List<TrackingData> trackingDatas = new List<TrackingData>();
     public AudioSource beep;
+    public AudioClip beepClip;
     float rmsetmp = 0f;
-    
 
+    
     void Start()
     {
         power = 0;
@@ -78,7 +80,7 @@ public class GraphControll : MonoBehaviour
             canvas.transform.GetChild(1).gameObject.SetActive(true);
             //레전드 세팅
             SetlLegend();
-            title.text = "MaxPower";
+            title.text = "Strength";
             inputField.SetActive(false);
             chart.DataSource.ClearCategory("GuideLine");
             chart.DataSource.ClearCategory("Data");
@@ -197,19 +199,20 @@ public class GraphControll : MonoBehaviour
         }
     }
 
-    //Beep사운드
+    //Beep사운드 https://blog.naver.com/PostView.nhn?blogId=ckdduq2507&logNo=222113891105&parentCategoryNo=&categoryNo=74&viewDate=&isShowPopularPosts=true&from=search
     IEnumerator ControllBeep()
     {
+        yield return new WaitForSeconds(2.7f);
+        beep.PlayOneShot(beepClip);
         yield return new WaitForSeconds(3f);
-        beep.Play();
-        yield return new WaitForSeconds(3f);
-        beep.Play();
+        beep.PlayOneShot(beepClip);
         yield return null;
     }
 
     //최대힘 측정 함수
     IEnumerator MeasureMaxPower()
-    {
+    {   
+        //UserData 그래프 
         while(timer <= 9)
         {
             maxPowerDatas.Add(new MaxPowerData(timer, SelectFinger.GetInputData()));
@@ -218,6 +221,7 @@ public class GraphControll : MonoBehaviour
             yield return null;
         }
         //Debug.Log( chart.DataSource.GetMaxValue(1,true));    
+        //risingTime 그려주기
         var risingStart = maxPowerDatas.Max(x => x.data)* 0.1f;
         var risingEnd = maxPowerDatas.Max(x => x.data) * 0.9f;
         chart.DataSource.StartBatch();
@@ -229,13 +233,28 @@ public class GraphControll : MonoBehaviour
         Debug.Log("RT = " + risingTIme);
         chart.DataSource.EndBatch();
 
+        //releaseTime 계산
+        var tmpList = maxPowerDatas.Where(x => x.time >= 6).ToList();
+        var releaseStart = tmpList.Max(x => x.data) * 0.9f;
+        var releaseEnd = tmpList.Max(x => x.data) * 0.1f;
+        var releaseTime = tmpList.Where(x => x.data <= releaseEnd).Min(x => x.time) - tmpList.Where(x => x.data >= releaseStart).Min(x => x.time);
+        Debug.Log("Release = " + releaseTime);
+
+        //DB
+        Data.instance.maxPower_average = maxPowerDatas.Max(x => x.data);
+        Data.instance.risingTime = risingTIme;
+        Data.instance.releaseTime = releaseTime;
+        string query = "INSERT INTO measurement (date,userID,gameID,maxPower,risingTime,releaseTime) VALUES ('" + DateTime.Now.ToString("yyyy년 MM-dd일 HH시 mm분 ss초") + "','" + Data.instance.userID + "','" + "01M" + "','" + Data.instance.maxPower_average + "','" + Data.instance.risingTime + "','" + Data.instance.releaseTime + "')";
+        DB.DatabaseInsert(query);
+
         canvas.transform.GetChild(2).gameObject.SetActive(true);
-        result.text = "MaxPower : " + maxPowerDatas.Max(x => x.data) + "g\n" + "Rising Time : " + risingTIme ;
+        result.text = "MaxPower : " + (maxPowerDatas.Max(x => x.data) * 0.001f).ToString("F2") + "kgf\n" + "Rising Time : " + risingTIme.ToString("F2") ;
     }
 
     // DC 트래킹 측정
     IEnumerator MeasureDCTracking()
     {
+        //User Data 그래프
         while (timer >= 0 && timer < startOffset)
         {
             var fingertmp = SelectFinger.GetInputData() / halfPower * 100;
@@ -258,9 +277,15 @@ public class GraphControll : MonoBehaviour
             timer += Time.deltaTime;
             yield return null;
         }
-        canvas.transform.GetChild(2).gameObject.SetActive(true);
-        result.text = "RMSE \n" + Mathf.Sqrt(rmsetmp / trackingDatas.Count());
-        Debug.Log("평균 : " + Mathf.Sqrt(rmsetmp / trackingDatas.Count()));
+
+        canvas.transform.GetChild(2).gameObject.SetActive(true);    // 결과 패널
+        var RMSE = Mathf.Sqrt(rmsetmp / trackingDatas.Count());
+        result.text = "RMSE \n" + RMSE; //Mathf.Sqrt(rmsetmp / trackingDatas.Count());  
+        Debug.Log("평균 : " + RMSE); //Mathf.Sqrt(rmsetmp / trackingDatas.Count()));
+
+  /*      Data.instance.rmseValue = RMSE;
+        string query = "INSERT INTO measurement (date,userID,gameID,rmse) VALUES ('" + DateTime.Now.ToString("yyyy년 MM-dd일 HH시 mm분 ss초") + "','" + Data.instance.userID + "','" + "04M" + "','" + Data.instance.rmseValue + "')";
+        DB.DatabaseInsert(query);*/
     }
 
     //사인파 트래킹 측정 
@@ -286,8 +311,13 @@ public class GraphControll : MonoBehaviour
             yield return null;
         }
         canvas.transform.GetChild(2).gameObject.SetActive(true);
-        result.text = "RMSE\n" + Mathf.Sqrt(rmsetmp / trackingDatas.Count());
-        Debug.Log( "평균 : " + Mathf.Sqrt(rmsetmp / trackingDatas.Count()));
+        var RMSE = Mathf.Sqrt(rmsetmp / trackingDatas.Count());
+        result.text = "RMSE\n" + RMSE;
+        Debug.Log( "평균 : " + RMSE);
+
+        Data.instance.rmseValue = RMSE;
+        string query = "INSERT INTO measurement (date,userID,gameID,rmse) VALUES ('" + DateTime.Now.ToString("yyyy년 MM-dd일 HH시 mm분 ss초") + "','" + Data.instance.userID + "','" + "04M" + "','" + Data.instance.rmseValue + "')";
+        DB.DatabaseInsert(query);
     }
 
     //버튼으로 모드 변경

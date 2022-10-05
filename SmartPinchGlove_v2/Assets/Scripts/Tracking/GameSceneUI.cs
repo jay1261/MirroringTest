@@ -85,15 +85,15 @@ public class GameSceneUI : MonoBehaviour
         resultPanel.SetActive(true);
         resultAR.text = averageRMSE.text;
         resultMP.text = maxPower.text;
-
-        if (!isDBInserted)
+        //DB입력부분 
+        /*if (!isDBInserted)
         {
             isDBInserted = true;            
             Data.instance.rmseValue = Manager_Tracking.rmse;
             //쿼리문
             string query = "INSERT INTO measurement (date,userID,gameID,rmse) VALUES ('" + DateTime.Now.ToString("yyyy년 MM-dd일 HH시 mm분 ss초") + "','" + Data.instance.userID + "','" + "04M" + "','" + Data.instance.rmseValue + "')";
             DB.DatabaseInsert(query);
-        }
+        }*/
         //StopCoroutine(AddScore());
     }
 

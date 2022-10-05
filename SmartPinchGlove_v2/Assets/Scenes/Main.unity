@@ -782,7 +782,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD65C\uB3D9\uC744 \uC120\uD0DD\uD574\uC8FC\uC138\uC694"
+  m_Text: Please Select activity
 --- !u!222 &80793854
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1107,9 +1107,7 @@ RectTransform:
   - {fileID: 213421843}
   - {fileID: 80793851}
   - {fileID: 684630845}
-  - {fileID: 1948736772}
-  - {fileID: 570934644}
-  - {fileID: 1646855930}
+  - {fileID: 1899696472}
   m_Father: {fileID: 1830897885}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1826,7 +1824,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 210, y: -40}
-  m_SizeDelta: {x: 100, y: 52}
+  m_SizeDelta: {x: 105, y: 55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &132213168
 MonoBehaviour:
@@ -2173,7 +2171,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 1194bc97a71cf7e4fad98511be5638bb, type: 3}
-    m_FontSize: 100
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -2184,7 +2182,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uCE21 \uC815"
+  m_Text: Measurement
 --- !u!222 &182071429
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3918,7 +3916,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uB85C\uADF8\uC778"
+  m_Text: Sign in
 --- !u!222 &365740192
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6045,13 +6043,13 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1459734301}
-  m_Father: {fileID: 82501404}
-  m_RootOrder: 4
+  m_Father: {fileID: 1899696472}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 348, y: -135.31}
-  m_SizeDelta: {x: 412.58838, y: 412.58838}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 650, y: -50}
+  m_SizeDelta: {x: 400, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &570934645
 Animator:
@@ -6706,7 +6704,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 1194bc97a71cf7e4fad98511be5638bb, type: 3}
-    m_FontSize: 48
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -6717,7 +6715,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uCD5C\uB300 \uD798 \uCE21\uC815"
+  m_Text: Pinch Strength
 --- !u!222 &651278025
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6862,7 +6860,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 1194bc97a71cf7e4fad98511be5638bb, type: 3}
-    m_FontSize: 48
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -6873,7 +6871,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC815\uBC00\uCE21\uC815"
+  m_Text: "measurement\r"
 --- !u!222 &660315662
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7309,7 +7307,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC190\uAC00\uB77D \uAE30\uB2A5 \uD6C8\uB828 \uD504\uB85C\uADF8\uB7A8"
+  m_Text: 'Contents for Traning '
 --- !u!222 &684630849
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8205,7 +8203,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &813893925
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8403,7 +8401,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 1194bc97a71cf7e4fad98511be5638bb, type: 3}
-    m_FontSize: 48
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -8414,7 +8412,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD2B8\uB798\uD0B9"
+  m_Text: Tracking
 --- !u!222 &838436286
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9017,7 +9015,7 @@ GameObject:
   - component: {fileID: 921499019}
   - component: {fileID: 921499018}
   m_Layer: 5
-  m_Name: Text
+  m_Name: MainTitle_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9089,7 +9087,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC2A4\uB9C8\uD2B8 \uD540\uCE58 \uAE00\uB7EC\uBE0C"
+  m_Text: Smart Pinch Glove
 --- !u!222 &921499020
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9156,7 +9154,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 1194bc97a71cf7e4fad98511be5638bb, type: 3}
-    m_FontSize: 100
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -9167,7 +9165,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uACB0 \uACFC"
+  m_Text: Result
 --- !u!222 &924421486
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9695,7 +9693,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD65C\uB3D9\uC744 \uC120\uD0DD\uD574\uC8FC\uC138\uC694"
+  m_Text: "Please select activity\r"
 --- !u!222 &987842907
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10058,7 +10056,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC2A4\uB9C8\uD2B8 \uD540\uCE58 \uAE00\uB7EC\uBE0C"
+  m_Text: Smart Pinch Glove
 --- !u!222 &1093665590
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10887,7 +10885,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 1194bc97a71cf7e4fad98511be5638bb, type: 3}
-    m_FontSize: 48
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -10898,7 +10896,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC815\uD655\uB3C4 \uCE21\uC815"
+  m_Text: Pinch Accuracy
 --- !u!222 &1206122820
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11932,7 +11930,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 1194bc97a71cf7e4fad98511be5638bb, type: 3}
-    m_FontSize: 100
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -11943,7 +11941,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD6C8 \uB828"
+  m_Text: Training
 --- !u!222 &1311394204
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12111,7 +12109,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD65C\uB3D9\uC744 \uC120\uD0DD\uD574\uC8FC\uC138\uC694"
+  m_Text: 'Please select activity
+
+'
 --- !u!222 &1330394693
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13254,7 +13254,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1422662151
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13554,7 +13554,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 1194bc97a71cf7e4fad98511be5638bb, type: 3}
-    m_FontSize: 48
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -13565,7 +13565,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD65C\uC3D8\uAE30"
+  m_Text: Arrow
 --- !u!222 &1459734303
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14122,7 +14122,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1533282806
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15449,7 +15449,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 129.5, y: -40}
+  m_AnchoredPosition: {x: 125.5, y: -40}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1635565386
@@ -15541,13 +15541,13 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 838436284}
-  m_Father: {fileID: 82501404}
-  m_RootOrder: 5
+  m_Father: {fileID: 1899696472}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 2028.1759, y: -616}
-  m_SizeDelta: {x: 300, y: 300}
+  m_AnchoredPosition: {x: 1100, y: -50}
+  m_SizeDelta: {x: 400, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1646855931
 MonoBehaviour:
@@ -15813,7 +15813,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 1194bc97a71cf7e4fad98511be5638bb, type: 3}
-    m_FontSize: 48
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -15824,7 +15824,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uB9AC\uB4EC\uAC8C\uC784"
+  m_Text: BeatPinch
 --- !u!222 &1676286662
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15902,7 +15902,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uACC4\uC815 \uD655\uC778"
+  m_Text: Sign in
 --- !u!222 &1716562889
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16429,7 +16429,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 210, y: -40}
-  m_SizeDelta: {x: 71, y: 52}
+  m_SizeDelta: {x: 79, y: 55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1748606487
 MonoBehaviour:
@@ -16897,7 +16897,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 1194bc97a71cf7e4fad98511be5638bb, type: 3}
-    m_FontSize: 48
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -16908,7 +16908,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uBC15\uC2A4\uC564 \uBE14\uB7ED"
+  m_Text: Box & Block
 --- !u!222 &1794612344
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -17533,6 +17533,70 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1871955128}
   m_CullTransparentMesh: 0
+--- !u!1 &1899696471
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1899696472}
+  - component: {fileID: 1899696473}
+  m_Layer: 5
+  m_Name: Button_Container
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1899696472
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899696471}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1948736772}
+  - {fileID: 570934644}
+  - {fileID: 1646855930}
+  m_Father: {fileID: 82501404}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -559, y: -159}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1899696473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899696471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_Spacing: 50
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
 --- !u!1 &1917524650
 GameObject:
   m_ObjectHideFlags: 0
@@ -18040,7 +18104,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD68C\uC6D0\uAC00\uC785"
+  m_Text: Sign up
 --- !u!222 &1938184674
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18150,7 +18214,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC190\uAC00\uB77D \uAE30\uB2A5 \uCE21\uC815 \uD504\uB85C\uADF8\uB7A8"
+  m_Text: "Content\rs for Measurement "
 --- !u!222 &1947276632
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18282,13 +18346,13 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1676286660}
-  m_Father: {fileID: 82501404}
-  m_RootOrder: 3
+  m_Father: {fileID: 1899696472}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -268, y: -135.31}
-  m_SizeDelta: {x: 412.58838, y: 412.58838}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 200, y: -50}
+  m_SizeDelta: {x: 400, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1948736773
 Animator:
@@ -18656,7 +18720,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 1194bc97a71cf7e4fad98511be5638bb, type: 3}
-    m_FontSize: 48
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -18667,7 +18731,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD0DC\uD551 \uD69F\uC218 \uCE21\uC815"
+  m_Text: Tapping
 --- !u!222 &1955289447
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18921,7 +18985,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 115, y: -40}
+  m_AnchoredPosition: {x: 112.5, y: -40}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1969458749
