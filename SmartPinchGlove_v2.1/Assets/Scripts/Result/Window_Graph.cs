@@ -361,12 +361,12 @@ public class Window_Graph : MonoBehaviour
         if (isSecond) //라이징타임
         {
             gameObject.GetComponent<Image>().sprite = dotConnectionSprite_red;
-            rectTransform.sizeDelta = new Vector2(distance, 1f); //선 너비
+            rectTransform.sizeDelta = new Vector2(distance, 2f); //선 너비
         }
         if (isThird) //릴리즈타임
         {
             gameObject.GetComponent<Image>().sprite = dotConnectionSprite_blue;
-            rectTransform.sizeDelta = new Vector2(distance, 1f); //선 너비
+            rectTransform.sizeDelta = new Vector2(distance, 2f); //선 너비
         }
     }
 

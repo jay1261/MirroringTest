@@ -54,9 +54,9 @@ public class GameSceneUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        remainingTimeText.text = "남은 시간: " + Manager_Tracking.globalTimer.ToString("N2") + "초";
+        remainingTimeText.text = "Time limit: " + Manager_Tracking.globalTimer.ToString("N1");
         maxPower.text = "설정 최대 힘: " + PlayerBehaviour.mf.ToString();
-        averageRMSE.text = "평균 오차: " + Manager_Tracking.rmse.ToString("N2");
+        averageRMSE.text = "RMSE: " + Manager_Tracking.rmse.ToString("N2");
         frequency.text = "측정 빈도: " + HitItem.fq.ToString("N3");
         pauseAR.text = averageRMSE.text;
         pauseMP.text = maxPower.text;

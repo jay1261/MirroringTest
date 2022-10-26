@@ -1973,8 +1973,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 783a6def8fc5e4d80af0b3066d73111b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Color1: {r: 0.6556088, g: 0.31287822, b: 0.8396226, a: 1}
-  Color2: {r: 0.13363299, g: 0.2015057, b: 0.7264151, a: 1}
+  Color1: {r: 0.16078432, g: 0.19607845, b: 0.7294118, a: 1}
+  Color2: {r: 0.6509804, g: 0.30980393, b: 0.8352942, a: 1}
   Angle: 180
 --- !u!114 &181325944
 MonoBehaviour:
@@ -9187,7 +9187,6 @@ GameObject:
   - component: {fileID: 947175199}
   - component: {fileID: 947175198}
   - component: {fileID: 947175197}
-  - component: {fileID: 947175196}
   - component: {fileID: 947175195}
   m_Layer: 5
   m_Name: "\uB85C\uADF8\uC778Btn"
@@ -9228,24 +9227,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 783a6def8fc5e4d80af0b3066d73111b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Color1: {r: 0.6556088, g: 0.31287822, b: 0.8396226, a: 1}
-  Color2: {r: 0.13363299, g: 0.2015057, b: 0.7264151, a: 1}
+  Color1: {r: 0.16862746, g: 0.19607845, b: 0.7294118, a: 1}
+  Color2: {r: 0.654902, g: 0.30980393, b: 0.8352942, a: 1}
   Angle: 180
---- !u!114 &947175196
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 947175193}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 783a6def8fc5e4d80af0b3066d73111b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Color1: {r: 0.36748895, g: 0.22988607, b: 0.7735849, a: 1}
-  Color2: {r: 0.8, g: 0.3647059, b: 0.9098039, a: 1}
-  Angle: 0
 --- !u!95 &947175197
 Animator:
   serializedVersion: 3
@@ -11303,6 +11287,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 12800000, guid: 1194bc97a71cf7e4fad98511be5638bb,
         type: 3}
+    - target: {fileID: 423504833525214290, guid: 2a86547568e0f504490cbe369ab56d08,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: setFinger2
+      objectReference: {fileID: 0}
+    - target: {fileID: 423504833525214290, guid: 2a86547568e0f504490cbe369ab56d08,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a86547568e0f504490cbe369ab56d08, type: 3}
 --- !u!224 &1231918121 stripped

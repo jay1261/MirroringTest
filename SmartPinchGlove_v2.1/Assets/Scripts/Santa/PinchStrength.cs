@@ -124,7 +124,7 @@ public class PinchStrength : MonoBehaviour
         
 
         yield return new WaitForSecondsRealtime(1f);
-        Strength_UIManager.Instance.result_Text.text = (playNumber+1).ToString("F0") + "번 결과: " + pinch_Max.ToString() + "점";
+        Strength_UIManager.Instance.result_Text.text = (playNumber+1).ToString("F0") + "번 결과: " + pinch_Max.ToString("F0") + "점";
         results[playNumber] = Convert.ToInt32((double)pinchDatas.Max(x => x.pinch)); //배열에 잘 들어가는지 확인해야함
         if (playNumber < 2)
         {

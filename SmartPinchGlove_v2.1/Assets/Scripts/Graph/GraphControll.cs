@@ -42,6 +42,7 @@ public class GraphControll : MonoBehaviour
     Text result;
     public GraphChart chart;
     public GameObject canvas;
+    public GameObject startPanel;
     public int power = 0;
     public float halfPower = 0f;
     float timer;
@@ -52,7 +53,6 @@ public class GraphControll : MonoBehaviour
     public AudioSource beep;
     public AudioClip beepClip;
     float rmsetmp = 0f;
-
     
     void Start()
     {
@@ -68,6 +68,7 @@ public class GraphControll : MonoBehaviour
         result = canvas.transform.GetChild(2).GetChild(0).GetComponent<Text>();
         title.text = "Measurement";
         inputField = canvas.transform.GetChild(1).GetChild(4).GetChild(0).gameObject;
+        startPanel = canvas.transform.GetChild(5).gameObject;
     }
 
     //그래프 설정
@@ -80,7 +81,7 @@ public class GraphControll : MonoBehaviour
             canvas.transform.GetChild(1).gameObject.SetActive(true);
             //레전드 세팅
             SetlLegend();
-            title.text = "Strength";
+            title.text = "Pinch Strength";
             inputField.SetActive(false);
             chart.DataSource.ClearCategory("GuideLine");
             chart.DataSource.ClearCategory("Data");
@@ -102,20 +103,21 @@ public class GraphControll : MonoBehaviour
             canvas.transform.GetChild(1).gameObject.SetActive(true);
             //레전드 필요없는거 끄기
             SetlLegend();
-            title.text = "DC Tracking";
-            inputField.SetActive(true);
+            title.text = "Static endurance";
+            inputField.SetActive(false);
             chart.DataSource.StartBatch();
             chart.DataSource.ClearCategory("GuideLine");
             chart.DataSource.ClearCategory("Data");
             timer = 0f;
             rmsetmp = 0f;
             trackingDatas.Clear();
-            chart.DataSource.VerticalViewSize = 100; //halfPower;
+            chart.DataSource.VerticalViewSize = power + 2; //halfPower;
             chart.DataSource.HorizontalViewSize = 20 + startOffset;
+            
             //가이드라인 그리기
             chart.DataSource.StartBatch();
-            chart.DataSource.AddPointToCategory("GuideLine", 2, 50);
-            chart.DataSource.AddPointToCategory("GuideLine", 20 + startOffset, 50);
+            chart.DataSource.AddPointToCategory("GuideLine", 2, power * 0.9f);
+            chart.DataSource.AddPointToCategory("GuideLine", 20 + startOffset, power * 0.9f);
             chart.DataSource.EndBatch();
 
             //StartCoroutine(MeasureDCTracking());
@@ -127,8 +129,8 @@ public class GraphControll : MonoBehaviour
             canvas.transform.GetChild(1).gameObject.SetActive(true);
             //레전드 세팅
             SetlLegend();
-            title.text = "Sin Tracking";
-            inputField.SetActive(true);
+            title.text = "Force control";
+            inputField.SetActive(false);
             chart.DataSource.ClearCategory("GuideLine");
             chart.DataSource.ClearCategory("Data");
             chart.DataSource.ClearCategory("RisingTIme1");
@@ -136,17 +138,23 @@ public class GraphControll : MonoBehaviour
             timer = 0f;
             rmsetmp = 0f;
             trackingDatas.Clear();
-            chart.DataSource.VerticalViewSize = 100; //halfPower;
+            chart.DataSource.VerticalViewSize = power; //halfPower;
             chart.DataSource.HorizontalViewSize = 20 + startOffset;
 
             chart.DataSource.StartBatch();
             for (float i = startOffset; i < 20 + startOffset; i += 0.1f)
             {
-                chart.DataSource.AddPointToCategory("GuideLine", i, Mathf.Sin((0.2f * (Mathf.PI)) * (i - startOffset) - (0.5f * (Mathf.PI))) * (25) + (25));//chart.DataSource.AddPointToCategory("GuideLine",i,Mathf.Sin((0.2f * (Mathf.PI)) * i-(0.5f* (Mathf.PI))) * (halfPower / 4f) + (halfPower / 4f));
+                chart.DataSource.AddPointToCategory("GuideLine", i, Mathf.Sin((0.2f * (Mathf.PI)) * (i - startOffset) - (0.5f * (Mathf.PI))) * (power/4f) + (power / 4f));//chart.DataSource.AddPointToCategory("GuideLine",i,Mathf.Sin((0.2f * (Mathf.PI)) * i-(0.5f* (Mathf.PI))) * (halfPower / 4f) + (halfPower / 4f));
             }
             chart.DataSource.EndBatch();
             //StartCoroutine(MeasureSinTracking());
         }
+    }
+
+    public void setPower()
+    {
+        startPanel.SetActive(true);
+        power = int.Parse(startPanel.transform.GetChild(0).GetComponent<InputField>().text);
     }
 
     public void StartMeasurement()
@@ -159,15 +167,15 @@ public class GraphControll : MonoBehaviour
 
         else if (measurementIndex == "DCTracking")
         {
-            power = int.Parse(inputField.GetComponent<InputField>().text);
-            halfPower = power / 2f;
+            //power = int.Parse(inputField.GetComponent<InputField>().text);
+            //halfPower = power / 2f;
             StartCoroutine(MeasureDCTracking());
         }
 
         else if (measurementIndex == "SINTracking")
         {
-            power = int.Parse(inputField.GetComponent<InputField>().text);
-            halfPower = power / 2f;
+            //power = int.Parse(inputField.GetComponent<InputField>().text);
+            //halfPower = power / 2f;
             StartCoroutine(MeasureSinTracking());
         }
     }
@@ -258,16 +266,16 @@ public class GraphControll : MonoBehaviour
         DB.DatabaseInsert(query);
 
         canvas.transform.GetChild(2).gameObject.SetActive(true);
-        result.text = "MaxPower : " + (maxPowerDatas.Max(x => x.data) * 0.001f).ToString("F2") + "kgf\n" + "Rising Time : " + risingTIme.ToString("F2") ;
+        result.text = "MaxPower : " + (maxPowerDatas.Max(x => x.data) * 0.001f).ToString("F2") + "kg\n" + "Rising Time : " + risingTIme.ToString("F2") ;
     }
 
-    // DC 트래킹 측정
+    // DC 트래킹 측정 (static endurance)
     IEnumerator MeasureDCTracking()
     {
         //User Data 그래프
         while (timer >= 0 && timer < startOffset)
         {
-            var fingertmp = SelectFinger.GetInputData() / halfPower * 50f;
+            var fingertmp = SelectFinger.GetInputData() * 0.001f;
             chart.DataSource.AddPointToCategoryRealtime("Data", timer, fingertmp);
             timer += Time.deltaTime;
             Debug.Log("timer : " + timer);
@@ -275,8 +283,8 @@ public class GraphControll : MonoBehaviour
         }
         while (timer >= startOffset && timer <= 20 + startOffset)
         {
-            var DCtmp = 50f;
-            var fingertmp = SelectFinger.GetInputData() / halfPower * 50f;
+            var DCtmp = power * 0.9f;
+            var fingertmp = SelectFinger.GetInputData() * 0.001f;
             var rmsePow = Mathf.Pow(DCtmp - fingertmp, 2f);
 
             trackingDatas.Add(new TrackingData(timer, fingertmp, DCtmp));
@@ -303,15 +311,15 @@ public class GraphControll : MonoBehaviour
     {
         while (timer >= 0 && timer < startOffset)
         {
-            var fingertmp = SelectFinger.GetInputData() / halfPower * 50;
+            var fingertmp = SelectFinger.GetInputData() * 0.001f;
             chart.DataSource.AddPointToCategoryRealtime("Data", timer, fingertmp);
             timer += Time.deltaTime;
             yield return null;
         }
         while (timer >= startOffset && timer <= 20 + startOffset)
         {
-            var sintmp = Mathf.Sin((0.2f * (Mathf.PI)) * (timer - startOffset) - (0.5f * (Mathf.PI))) * (25) + (25);//var sintmp = Mathf.Sin((0.2f * (Mathf.PI)) * timer - (0.5f * (Mathf.PI))) * (halfPower / 4f) + (halfPower / 4f);
-            var fingertmp = SelectFinger.GetInputData() / halfPower * 50;
+            var sintmp = Mathf.Sin((0.2f * (Mathf.PI)) * (timer - startOffset) - (0.5f * (Mathf.PI))) * (power / 4f) + (power / 4f);//var sintmp = Mathf.Sin((0.2f * (Mathf.PI)) * timer - (0.5f * (Mathf.PI))) * (halfPower / 4f) + (halfPower / 4f);
+            var fingertmp = SelectFinger.GetInputData() * 0.001f;
             var rmsePow = Mathf.Pow(sintmp - fingertmp, 2f);
             trackingDatas.Add(new TrackingData(timer, fingertmp, sintmp));
             chart.DataSource.AddPointToCategoryRealtime("Data", timer, fingertmp);
@@ -334,8 +342,10 @@ public class GraphControll : MonoBehaviour
     public void SetMeasurementIndex(string s)
     {
         measurementIndex = s;
-
-        SetGraph();
+        if (s == "maxPower")
+        {
+            SetGraph();
+        }
     }
     
     
