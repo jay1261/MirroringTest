@@ -64,7 +64,7 @@ public class table_Result : MonoBehaviour
             rank.Add(new Ranking(DB.dataReader.GetString(0), DB.dataReader.GetFloat(1)));
         }
         var userRank = rank.IndexOf(rank.Find(x=>x.userID.Contains(Data.instance.userID))) + 1;
-        Debug.Log(userRank);
+        //Debug.Log(userRank);
         result = ((float)userRank / (float)rank.Count) * 100f;  // 개인 순위 / 전체 이용자 수 * 100
 
         return result;
