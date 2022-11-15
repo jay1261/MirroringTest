@@ -79,3 +79,6 @@ crashlytics-build.properties
 #라이브러리, 에셋 무시
 /*/Library/
 /*/Assets/PaidAssets/
+
+*.mp4
+*.MP4
