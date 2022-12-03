@@ -1,7 +1,5 @@
 <div align="center">
-![header](https://capsule-render.vercel.app/api?type=slice)
-<!-- <h1>스마트 핀치 글러브 및 기능성 콘텐츠 개발</h1><br> -->
-
+![header](https://capsule-render.vercel.app/api?type=waving&color=0099cc&height=100&section=header&text=스마트%20핀치%20글러브%20및%20기능성%20콘텐츠%20개발&fontSize=30)
 
 <h1>프로젝트 소개</h1>
 본 프로젝트는 뇌병변 장애 등으로 인해 손의 마비가 동반된 소외계층자의 손가락 기능 개선을 위하여<br>FSR(Force Sensing Resistor) 힘 센서를 활용한 디바이스를 제작하고, VR기기와 연동하여 pinch strength, tapping, tremor 등에 대한<br> 정량적 측정 및 손의 근력 및 기능 개선 훈련이 가능한 다양한 콘텐츠 제작을 목표로 함
