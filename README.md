@@ -1,6 +1,5 @@
 <div align="center">
-<img width="80%" src="https://user-images.githubusercontent.com/99792672/205454964-33519e23-ffa7-44a5-a7e1-bcc2828b01d9.svg
-"/>
+![header](https://capsule-render.vercel.app/api?type=slice)
 <!-- <h1>스마트 핀치 글러브 및 기능성 콘텐츠 개발</h1><br> -->
 
 
