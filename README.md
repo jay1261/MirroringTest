@@ -9,7 +9,7 @@
 <br><br>
 
 <h3>[서비스 구성도]</h3>
-<img width="80%" src="/uploads/b062bd2d7916ceeb0eaf21eb299c2fdf/service.png"/>
+<img width="80%" src="https://user-images.githubusercontent.com/99792672/205454970-2f53fda1-bcef-46f4-a6c6-3a304d70079a.png"/>
 <br><br>
 
 <h3>[개발환경]</h3>
