@@ -14,25 +14,23 @@
 <img src="https://img.shields.io/badge/-orCAD-EB1939?style=flat-square"></a>
 <img src="https://img.shields.io/badge/-pads-06A1DC?style=flat-square&logo=pads"></a>
 <img src="https://img.shields.io/badge/-STM32-03234B?style=flat-square&logo="></a><br><br>
-<img width="50%" src="/uploads/a995a091c3b819fd7cd4ede00cda5ccd/hw.png"/><br><br>
+<img width="50%" src="https://user-images.githubusercontent.com/99792672/205454982-33e190fd-fcd7-47fc-978f-bb0eeb67110d.png"/><br><br>
 콘텐츠<br> <img src="https://img.shields.io/badge/-unity-black?style=flat-square&logo=unity"></a><br><br>
 데이터베이스<br> <img src="https://img.shields.io/badge/-SQLite-F79D29?style=flat-square&logo=MYSQL&logoColor=BLACK"></a><br>
 <br><hr style="border: solid 3px #FF0000;">
 <br>
 <h3>[하드웨어 소개]</h3><br>
 <h4>하드웨어 프로토타입</h4>
-<img width="80%" src="/uploads/95dde93e79a1da33b637fcc69f780cf2/hw소개4.png"/><br><br>
-<h4>PCB ArtWork</h4>
-<img width="30%" src="/uploads/e3677ab7d38f8d32cc2a41d419981a78/hw소개3.png"/><br><br>
+<img width="80%" src="https://user-images.githubusercontent.com/99792672/205454993-ab7521f6-2f24-4915-b6b5-82855dcdfcd7.png"/><br><br>
 <h4>PCB 제작</h4>
-<img width="60%" src="/uploads/b6f40e0ebbc9aca398551fe8fee5e5a6/hw소개10.png"/><br><br>
+<img width="60%" src="https://user-images.githubusercontent.com/99792672/205454998-ae21560d-4756-46b3-bc1b-b0da866980c1.png"/><br><br>
 <h4>FSR센서 상세</h4>
-<img width="60%" src="/uploads//733e37cdcf509e82fe5d5342f09bdff7/hw소개5.png"/><br><br>
+<img width="60%" src="https://user-images.githubusercontent.com/99792672/205454995-9279265f-fa82-4fc2-ad31-46dae33c7dbb.png"/><br><br>
 <h4>하드웨어 전원 공급 흐름도</h4>
-<img width="60%" src="/uploads/66dd68645063e09bccf6e98c106deca6/hw소개6.png"/><br><br>
+<img width="60%" src="https://user-images.githubusercontent.com/99792672/205454997-6d629e58-d915-4787-a54c-eef7b411b159.png"/><br><br>
 <h4>펌웨어 주요기능</h4>
-<img width="60%" src="/uploads/1b6701949305c25f40124b308b73ce4f/fw주요기능.png"/><br><br>
+<img width="60%" src="https://user-images.githubusercontent.com/99792672/205454992-58823841-b994-40f0-bb34-5cda7221d13f.png"/><br><br>
 <h4>통신 프로토콜</h4>
-<img width="60%" src="/uploads/7f63bf64b3bc191e77f97e5e902053b5/통신프로토콜.png"/><br><br>
+<img width="60%" src="https://user-images.githubusercontent.com/99792672/205454987-b27c3037-891f-472c-af28-5cbc2dfaccc6.png"/><br><br>
 
 ![Footer](https://capsule-render.vercel.app/api?type=waving&color=0099cc&height=100&section=footer)
