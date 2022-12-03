@@ -1,5 +1,5 @@
 <div align="center">
-![header](https://capsule-render.vercel.app/api?type=waving&color=0099cc&height=100&section=header&text=스마트%20핀치%20글러브%20및%20기능성%20콘텐츠%20개발&fontSize=30)
+https://github.com/jay1261/SmartPinchGlove/issues/1
 <!-- <h1>스마트 핀치 글러브 및 기능성 콘텐츠 개발</h1><br> -->
 
 <h1>프로젝트 소개</h1>
